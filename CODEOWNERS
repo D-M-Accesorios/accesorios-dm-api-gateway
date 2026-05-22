@@ -1,0 +1,27 @@
+# CODEOWNERS — accesorios-dm-api-gateway
+#
+# Formato: <patrón>  <@usuario-o-equipo> [<@usuario-adicional>]
+#
+# IMPORTANTE: Crear los equipos en GitHub antes de activar require_code_owner_reviews:
+#   - @D-M-Accesorios/leads      → arquitectos / tech leads
+#   - @D-M-Accesorios/backend    → desarrolladores backend
+#
+# Cada línea posterior sobreescribe las anteriores para ese patrón.
+
+# Propietario por defecto: cualquier archivo sin regla específica
+*                                   @D-M-Accesorios/leads
+
+# Configuración de infraestructura — solo leads
+Dockerfile                          @D-M-Accesorios/leads
+docker-compose.yml                  @D-M-Accesorios/leads
+.env.example                        @D-M-Accesorios/leads
+
+# Dependencias — revisión obligatoria de leads
+package.json                        @D-M-Accesorios/leads
+package-lock.json                   @D-M-Accesorios/leads
+
+# Workflows CI/CD — solo leads
+.github/                            @D-M-Accesorios/leads
+
+# Código fuente — equipo backend
+src/                                @D-M-Accesorios/backend @D-M-Accesorios/leads
